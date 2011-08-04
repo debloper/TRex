@@ -8,6 +8,9 @@
 <body>
   <form id="inputForm" method="get" target="_blank" action="https://api.twitter.com/1/statuses/user_timeline.json">
     <input type="text" id="screen_name" name="screen_name" />
+    <br />
+    Include Retweets : <input type="checkbox" name="include_rts" value="1" />
+    <br />
     <input type="submit" value="Fetch" />
   </form>
 </body>
