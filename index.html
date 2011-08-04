@@ -12,6 +12,9 @@
     Tweet Count : <input type="text" id="countVal" size="3" value="100" onKeyUp="count.value=this.value;" />
     <input type="range" id="count" name="count" max="200" step="1" onChange="countVal.value=this.value;" />
     <br />
+    Page Number of the Timeline : <input type="number" id="pageVal" value="16" size="3" onKeyUp="page.value=this.value;" />
+    <input type="range" id="page" name="page" max="16" value="16" step="1" onChange="pageVal.value=this.value;">
+    <br />
     Include Retweets : <input type="checkbox" name="include_rts" value="1" />
     <br />
     Discard User Info : <input type="checkbox" name="trim_user" value="1" />
