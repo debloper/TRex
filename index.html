@@ -7,23 +7,29 @@
 
 <body>
   <form id="inputForm" method="get" target="_blank" action="https://api.twitter.com/1/statuses/user_timeline.json">
-    Twitter Handle : <input type="text" id="screen_name" name="screen_name" />
+    <label for="screen_name">Twitter Handle</label>
+    <input type="text" id="screen_name" name="screen_name" />
     <br />
-    Tweets Per Page of Timeline : <input type="text" id="countVal" size="3" value="100" onKeyUp="count.value=this.value;" />
-    <input type="range" id="count" name="count" max="200" value="100" step="1" onChange="countVal.value=this.value;" />
+    <label for="count">Tweets Per Page of Timeline</label>
+    <input type="number" id="count" name="count" max="200" value="100" step="1" size="4" />
     <br />
-    Page Number of the Timeline : <input type="text" id="pageVal" value="16" size="3" onKeyUp="page.value=this.value;" />
-    <input type="range" id="page" name="page" max="16" value="16" step="1" onChange="pageVal.value=this.value;">
+    <label for="page">Page Number of the Timeline</label>
+    <input type="number" id="page" name="page" max="3200" value="16" step="1" size="4" />
     <br />
-    Include Retweets : <input type="checkbox" name="include_rts" value="1" />
+    <label for="include_rts">Include Retweets</label>
+    <input type="checkbox" id="include_rts" name="include_rts" value="1" />
     <br />
-    Exclude Replies : <input type="checkbox" name="exclude_replies" value="1" />
+    <label for="exclude_replies">Exclude Replies</label>
+    <input type="checkbox" id="exclude_replies" name="exclude_replies" value="1" />
     <br />
-    Discard User Info : <input type="checkbox" name="trim_user" value="1" />
+    <label for="trim_user">Discard User Info</label>
+    <input type="checkbox" id="trim_user" name="trim_user" value="1" />
     <br />
-    Include Tweet Entities : <input type="checkbox" name="include_entities" value="1" />
+    <label for="include_entities">Include Tweet Entities</label>
+    <input type="checkbox" id="include_entities" name="include_entities" value="1" />
     <br />
-    Account Contributor Details : <input type="checkbox" name="contributor_details" value="1" />
+    <label for="contributor_details">Account Contributor Details</label>
+    <input type="checkbox" id="contributor_details" name="contributor_details" value="1" />
     <br />
     <input type="submit" value="Fetch" />
   </form>
