@@ -24,29 +24,21 @@ input {
 
 <body>
   <form id="inputForm" method="get" target="_blank" action="https://api.twitter.com/1/statuses/user_timeline.json">
-    <label for="screen_name">Twitter Handle</label>
-    <input type="text" id="screen_name" name="screen_name" />
+    <label>Twitter Handle<input type="text" id="screen_name" name="screen_name" /></label>
     <br />
-    <label for="count">Tweets Per Page of Timeline</label>
-    <input type="number" id="count" name="count" max="200" value="100" step="1" size="4" />
+    <label>Tweets Per Page of Timeline<input type="number" name="count" max="200" value="100" step="1" size="4" /></label>
     <br />
-    <label for="page">Page Number of the Timeline</label>
-    <input type="number" id="page" name="page" max="3200" value="16" step="1" size="4" />
+    <label>Page Number of the Timeline<input type="number" name="page" max="3200" value="16" step="1" size="4" /></label>
     <br />
-    <label for="include_rts">Include Retweets</label>
-    <input type="checkbox" id="include_rts" name="include_rts" value="1" />
+    <label>Include Retweets<input type="checkbox" name="include_rts" value="1" /></label>
     <br />
-    <label for="exclude_replies">Exclude Replies</label>
-    <input type="checkbox" id="exclude_replies" name="exclude_replies" value="1" />
+    <label>Exclude Replies<input type="checkbox" name="exclude_replies" value="1" /></label>
     <br />
-    <label for="trim_user">Discard User Info</label>
-    <input type="checkbox" id="trim_user" name="trim_user" value="1" />
+    <label>Discard User Info<input type="checkbox" name="trim_user" value="1" /></label>
     <br />
-    <label for="include_entities">Include Tweet Entities</label>
-    <input type="checkbox" id="include_entities" name="include_entities" value="1" />
+    <label>Include Tweet Entities<input type="checkbox" name="include_entities" value="1" /></label>
     <br />
-    <label for="contributor_details">Account Contributor Details</label>
-    <input type="checkbox" id="contributor_details" name="contributor_details" value="1" />
+    <label>Account Contributor Details<input type="checkbox" name="contributor_details" value="1" /></label>
     <br />
     <input type="submit" value="Fetch" />
   </form>
