@@ -17,8 +17,8 @@ label {
 	border: 1px solid #eee; border-radius: 5px;
 	text-shadow: 0 0 2px #ccc;
 }
-label:hover {
-	color: #fff;
+label:hover, label.hasValue:hover {
+	color: #fff; cursor: pointer;
 	box-shadow: 5px 5px 20px #ccc;
 	background: #69c; border: 1px solid #69c;
 	background: linear-gradient(top, #ace, #69c);
@@ -26,6 +26,16 @@ label:hover {
 	background: -ms-linear-gradient(top, #ace, #69c);
 	background: -moz-linear-gradient(top, #ace, #69c);
 	background: -webkit-linear-gradient(top, #ace, #69c);
+}
+label.hasValue {
+	color: #fff; text-shadow: 0 0 2px #999, 0 0 5px #eee;
+	box-shadow: 0 0 5px #999;
+	background: #0c6; border: 1px solid #0c6;
+	background: linear-gradient(top, #aec, #0c6);
+	background: -o-linear-gradient(top, #aec, #0c6);
+	background: -ms-linear-gradient(top, #aec, #0c6);
+	background: -moz-linear-gradient(top, #aec, #0c6);
+	background: -webkit-linear-gradient(top, #aec, #0c6);
 }
 input {
 	float: right;
@@ -35,9 +45,30 @@ input[type="checkbox"] { display: none; }
 input[type="submit"] { color: #333; margin: 12px; padding: 8px 24px; }
 </style>
 
+<script>
+function updateClass(element) {
+	if (element.getAttribute("type") == "checkbox" &&
+	element.parentNode.className.toString() == "hasValue") {
+		element.parentNode.className -= "hasValue";
+	} else if (element.value != "") {
+		element.parentNode.className = "hasValue";
+	} else { element.parentNode.className -= "hasValue"; }
+}
+function appendListeners() {
+	var inputs = document.getElementsByTagName("input");
+	var count = inputs.length;
+	for ( i=0; i<count; i++ ) {
+		var node = inputs.item(i);
+		node.setAttribute("onChange", "updateClass(this);");
+		node.setAttribute("onKeyUp", "updateClass(this);");
+		node.setAttribute("onBlur", "updateClass(this);");
+	}
+}
+</script>
+
 </head>
 
-<body>
+<body onLoad="appendListeners();">
   <form id="inputForm" method="get" target="_blank" action="https://api.twitter.com/1/statuses/user_timeline.json">
     <label>Twitter Handle<input type="text" id="screen_name" name="screen_name" /></label>
     <label>Tweets Per Page of Timeline<input type="number" name="count" max="200" step="1" size="4" /></label>
