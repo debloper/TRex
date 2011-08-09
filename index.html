@@ -54,14 +54,17 @@ function updateClass(element) {
 		element.parentNode.className = "hasValue";
 	} else { element.parentNode.className -= "hasValue"; }
 }
+function renderElement(element, actions) {
+	for ( j=0; j<actions.length; j++ ) {
+		element.setAttribute(actions[j], "updateClass(this);");
+	}
+}
 function appendListeners() {
 	var inputs = document.getElementsByTagName("input");
 	var count = inputs.length;
 	for ( i=0; i<count; i++ ) {
-		var node = inputs.item(i);
-		node.setAttribute("onChange", "updateClass(this);");
-		node.setAttribute("onKeyUp", "updateClass(this);");
-		node.setAttribute("onBlur", "updateClass(this);");
+		eventList = ["onChange","onKeyUp","onBlur"];
+		renderElement(inputs.item(i), eventList);
 	}
 }
 </script>
