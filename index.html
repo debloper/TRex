@@ -5,18 +5,20 @@
 <title>TRex - Let's Back Tweets Up</title>
 
 <style>
-body { background: #eee; }
+body { background: #eee; font: 20px/32px Verdana, Geneva, sans-serif; }
 hgroup { width: 640px; margin: auto; padding: 24px; }
+h1, h6 { margin: 0; text-align: right; }
+h1 { color: #c55; font-size: 96px; line-height: 96px; text-shadow: 3px 3px 0 #bbb; }
+h6 { color: #567; font-size: 12px; text-shadow: 0 0 10px #69c; }
 form {
 	width: 640px; margin: auto; padding: 24px; display: table;
 	background: #f8f8f8; border: 1px ridge #ccc; border-radius: 5px;
-	color: #369; font: 20px/32px Verdana, Geneva, sans-serif;
 }
 label {
 	width: 550px; margin: 12px; padding: 8px 32px;
 	float: left; display: table-cell; vertical-align: middle;
 	border: 1px solid #eee; border-radius: 5px;
-	text-shadow: 0 0 2px #ccc;
+	color: #369; text-shadow: 0 0 2px #ccc;
 }
 label:hover, label.hasValue:hover {
 	color: #fff; cursor: pointer;
@@ -74,8 +76,8 @@ function appendListeners() {
 
 <body onLoad="appendListeners();">
   <hgroup>
-    <h1>TRex</h1>
-    <h4>Back up your Twitter timeline upto 3200 tweets!</h4>
+    <h1><span style="color: #69c;">T</span>Rex</h1>
+    <h6>Back up your Twitter timeline upto 3200th tweet!</h6>
   </hgroup>
   <form id="inputForm" method="get" target="_blank" action="https://api.twitter.com/1/statuses/user_timeline.json">
     <label>Twitter Handle<input type="text" id="screen_name" name="screen_name" /></label>
