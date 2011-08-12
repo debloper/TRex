@@ -14,6 +14,11 @@ form {
 	width: 640px; margin: auto; padding: 24px; display: table;
 	background: #f8f8f8; border: 1px ridge #ccc; border-radius: 5px;
 }
+form p {
+	width: 320px; margin: 12px 48px; float: left;
+	color: #c00; text-align: right;
+	font: 12px Verdana, Geneva, sans-serif;
+}
 label {
 	width: 550px; margin: 12px; padding: 8px 32px;
 	float: left; display: table-cell; vertical-align: middle;
@@ -104,6 +109,7 @@ function appendListeners() {
     <label style="width: 230px;">Exclude Replies<input type="checkbox" name="exclude_replies" value="1" /></label>
     <label style="width: 230px;">Discard User Info<input type="checkbox" name="trim_user" value="1" /></label>
     <label>Contributor Details for Shared Twitter Accounts<input type="checkbox" name="contributor_details" value="1" /></label>
+    <p>To fetch more than last 20 tweets, make sure that you're logged into twitter with the mentioned User ID, from this browser!</p>
     <input type="submit" value="Fetch Tweets" />
   </form>
 </body>
