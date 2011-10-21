@@ -59,10 +59,15 @@ input[type="submit"] { color: #333; margin: 12px; padding: 8px 24px; }
 function updateValue() {
 	var count = document.getElementById("count").value;
 	var node = document.getElementById("page");
-	if (count != "") {
-		node.setAttribute("max", 3200/count);
-		node.parentNode.setAttribute("title", "Maximum Value of P = " + 3200/count + ", for " + count + " tweets per page.");
-	} else { node.parentNode.setAttribute("title", "Maximum Value of P = 3200/N"); }
+	if ( !isNaN(count) && count != "" ) {
+		var buffer = Math.ceil(3200/count);
+		node.setAttribute("max", buffer);
+		node.setAttribute("value", buffer);
+		node.parentNode.setAttribute("title", "Maximum Value of P = " + buffer + ", for " + count + " tweets per page.");
+	} else {
+		document.getElementById("count").value = "";
+		node.parentNode.setAttribute("title", "Maximum Value of P = 3200/N");
+	}
 }
 function updateClass(element) {
 	if (element.getAttribute("type") == "checkbox" &&
