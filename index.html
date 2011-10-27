@@ -5,25 +5,24 @@
 <title>TRex - Let's Back Tweets Up</title>
 
 <style>
-body { background: #eee; font: 20px/32px Verdana, Geneva, sans-serif; }
-hgroup { width: 640px; margin: auto; padding: 24px; }
-h1, h6 { margin: 0; text-align: right; }
-h1 { color: #c55; font-size: 96px; line-height: 96px; text-shadow: 3px 3px 0 #bbb; }
-h6 { color: #567; font-size: 12px; text-shadow: 0 0 10px #69c; }
-form {
-	width: 640px; margin: auto; padding: 24px; display: table;
-	background: #f8f8f8; border: 1px ridge #ccc; border-radius: 5px;
+body {
+	margin: 0; padding: 24px;
+	background: #eee;
+	font: 20px/32px Verdana, Geneva, sans-serif;
 }
-form p {
-	width: 320px; margin: 12px 48px; float: left;
-	color: #c00; text-align: right;
-	font: 12px Verdana, Geneva, sans-serif;
-}
+hgroup { margin: auto; text-align: right; }
+h1, h6 { margin: 0; }
+h1 { color: #c55; text-shadow: 3px 3px 0 #bbb; }
+h6 { color: #567; text-shadow: 0 0 10px #69c; }
+form { margin: 24px auto; }
 label {
-	width: 550px; margin: 12px; padding: 8px 32px;
-	float: left; display: table-cell; vertical-align: middle;
-	border: 1px solid #eee; border-radius: 5px;
+	margin: 24px auto; padding: 8px 32px;
+	display: block; vertical-align: middle;
 	color: #369; text-shadow: 0 0 2px #ccc;
+}
+input {
+	color: #666; float: right;
+	font: 20px/24px Verdana, Geneva, sans-serif;
 }
 label:hover, label.hasValue:hover {
 	color: #fff; cursor: pointer;
@@ -45,14 +44,40 @@ label.hasValue {
 	background: -moz-linear-gradient(top, #aec, #0c6);
 	background: -webkit-linear-gradient(top, #aec, #0c6);
 }
-input {
-	float: right;
-	color: #666; font: 20px/24px Verdana, Geneva, sans-serif;
-}
 input[type="text"] { width: 240px; }
 input[type="number"] { width: 96px; }
 input[type="checkbox"] { display: none; }
 input[type="submit"] { color: #333; margin: 12px; padding: 8px 24px; }
+form p {
+	width: 320px; margin: 12px 48px; float: left;
+	color: #c00; text-align: right;
+	font: 12px Verdana, Geneva, sans-serif;
+}
+
+@media screen and (min-width: 801px) {
+hgroup { width: 640px; }
+h1 { font-size: 96px; line-height: 96px; }
+h6 { font-size: 12px; }
+form {
+	width: 640px; padding: 24px; display: table;
+	background: #f8f8f8; border: 1px solid #ccc; border-radius: 5px;
+}
+label {
+	width: 550px;
+	border: 1px solid #eee; border-radius: 5px;
+}
+}
+
+@media screen and (max-width: 800px) {
+hgroup { width: 100%; }
+h1 { font-size: 80px; line-height: 80px; }
+h6 { font-size: 12px; }
+form { width: 100%; }
+label {
+	background-color: #f8f8f8;
+	border: 1px solid #ccc; border-radius: 5px;
+}
+}
 </style>
 
 <script>
