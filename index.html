@@ -53,6 +53,7 @@ form p {
 	color: #c00; text-align: right;
 	font: 12px Verdana, Geneva, sans-serif;
 }
+label.checkBox { width: 40%; }
 
 @media screen and (min-width: 801px) {
 hgroup { width: 640px; }
@@ -66,6 +67,7 @@ label {
 	width: 550px;
 	border: 1px solid #eee; border-radius: 5px;
 }
+label.checkBox { margin-left: 12px; }
 }
 
 @media screen and (max-width: 800px) {
@@ -77,6 +79,7 @@ label {
 	background-color: #f8f8f8;
 	border: 1px solid #ccc; border-radius: 5px;
 }
+label.checkBox { margin-left: 0; }
 }
 </style>
 
@@ -134,11 +137,11 @@ function appendListeners() {
     <label title="Maximum Value of P = 3200/N">Page Number of the Timeline (P)
       <input type="number" id="page" name="page" min="1" step="1" size="4" onFocus="updateValue();" />
     </label>
-    <label style="width: 230px;">Include Retweets<input type="checkbox" name="include_rts" value="1" /></label>
-    <label style="width: 230px;">Include Tweet Entities<input type="checkbox" name="include_entities" value="1" /></label>
-    <label style="width: 230px;">Exclude Replies<input type="checkbox" name="exclude_replies" value="1" /></label>
-    <label style="width: 230px;">Discard User Info<input type="checkbox" name="trim_user" value="1" /></label>
-    <label>Contributor Details for Shared Twitter Accounts<input type="checkbox" name="contributor_details" value="1" /></label>
+    <label class="checkBox">Include Retweets<input type="checkbox" name="include_rts" value="1" /></label>
+    <label class="checkBox">Include Tweet Entities<input type="checkbox" name="include_entities" value="1" /></label>
+    <label class="checkBox">Exclude Replies<input type="checkbox" name="exclude_replies" value="1" /></label>
+    <label class="checkBox">Discard User Info<input type="checkbox" name="trim_user" value="1" /></label>
+    <label class="checkBox">Contributor Details<input type="checkbox" name="contributor_details" value="1" /></label>
     <p>To fetch more than last 20 tweets, make sure that you're logged into twitter with the mentioned User ID, from this browser!</p>
     <input type="submit" value="Fetch Tweets" />
   </form>
