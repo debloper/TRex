@@ -106,17 +106,13 @@ function updateClass(element) {
 			element.parentNode.classList.add("hasValue");
 	} else { element.parentNode.classList.remove("hasValue"); }
 }
-function renderElement(element, actions) {
-	for ( j=0; j<actions.length; j++ ) {
-		element.setAttribute(actions[j], "updateClass(this);");
-	}
-}
 function appendListeners() {
 	var inputs = document.getElementsByTagName("input");
 	var count = inputs.length;
 	for ( i=0; i<count; i++ ) {
-		eventList = ["onChange","onKeyUp","onBlur"];
-		renderElement(inputs.item(i), eventList);
+		inputs.item(i).setAttribute("onChange", "updateClass(this);");
+		if ( inputs.item(i).type != "checkbox" )
+			inputs.item(i).setAttribute("onKeyUp", "updateClass(this);");
 	}
 }
 </script>
