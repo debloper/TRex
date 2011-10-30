@@ -98,12 +98,13 @@ function updateValue() {
 	}
 }
 function updateClass(element) {
-	if (element.getAttribute("type") == "checkbox" &&
-	element.parentNode.className.toString() == "hasValue") {
-		element.parentNode.className -= "hasValue";
-	} else if (element.value != "") {
-		element.parentNode.className = "hasValue";
-	} else { element.parentNode.className -= "hasValue"; }
+	if ( element.type == "checkbox" ) {
+		element.parentNode.classList.toggle("hasValue");
+	}
+	else if ( element.value != "" ) {
+		if ( !element.parentNode.classList.contains("hasValue") ) {}
+			element.parentNode.classList.add("hasValue");
+	} else { element.parentNode.classList.remove("hasValue"); }
 }
 function renderElement(element, actions) {
 	for ( j=0; j<actions.length; j++ ) {
