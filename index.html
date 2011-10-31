@@ -53,9 +53,15 @@ form p {
 	color: #c00; text-align: right;
 	font: 12px Verdana, Geneva, sans-serif;
 }
-label.checkBox { width: 40%; }
+label.checkBox {
+	width: 36%;
+	margin: 12px auto;
+	display: inline-block;
+}
+label.checkBox:nth-child(even) { float: left; }
+label.checkBox:nth-child(odd) { float: right; }
 
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 921px) {
 hgroup { width: 640px; }
 h1 { font-size: 96px; line-height: 96px; }
 h6 { font-size: 12px; }
@@ -67,10 +73,11 @@ label {
 	width: 550px;
 	border: 1px solid #eee; border-radius: 5px;
 }
-label.checkBox { margin-left: 12px; }
+label.checkBox:nth-child(even) { margin-left: 12px; }
+label.checkBox:nth-child(odd) { margin-right: 12px; }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 920px) {
 hgroup { width: 100%; }
 h1 { font-size: 80px; line-height: 80px; }
 h6 { font-size: 12px; }
@@ -79,7 +86,8 @@ label {
 	background-color: #f8f8f8;
 	border: 1px solid #ccc; border-radius: 5px;
 }
-label.checkBox { margin-left: 0; }
+label.checkBox:nth-child(even) { margin-left: 0; }
+label.checkBox:nth-child(odd) { margin-right: 0; }
 }
 </style>
 
