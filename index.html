@@ -17,7 +17,7 @@ h6 { color: #567; text-shadow: 0 0 10px #69c; }
 form { margin: 24px auto; }
 label {
 	margin: 24px auto; padding: 8px 32px;
-	display: block; vertical-align: middle;
+	display: block; border-radius: 5px;
 	color: #369; text-shadow: 0 0 2px #ccc;
 }
 input {
@@ -53,12 +53,20 @@ form p {
 	font-size: 14px; line-height: 18px;
 }
 label.checkBox {
-	width: 36%;
 	margin: 12px auto;
-	display: inline-block;
 }
-label.checkBox:nth-child(even) { float: left; }
-label.checkBox:nth-child(odd) { float: right; }
+
+@media screen and (min-width: 513px) {
+label { padding: 8px 16px; }
+label.checkBox { width: 40%; display: inline-block; }
+label.checkBox:nth-child(even) { margin-left: 0; float: left; }
+label.checkBox:nth-child(odd) { margin-right: 0; float: right; }
+}
+
+@media screen and (min-width: 681px) {
+label { padding: 8px 32px; }
+label.checkBox { width: 36%; }
+}
 
 @media screen and (min-width: 921px) {
 hgroup { width: 640px; }
@@ -68,10 +76,7 @@ form {
 	width: 640px; padding: 24px; display: table;
 	background: #f8f8f8; border: 1px solid #ccc; border-radius: 5px;
 }
-label {
-	width: 550px;
-	border: 1px solid #eee; border-radius: 5px;
-}
+label { width: 550px; border: 1px solid #eee; }
 label.checkBox:nth-child(even) { margin-left: 12px; }
 label.checkBox:nth-child(odd) { margin-right: 12px; }
 }
@@ -81,12 +86,13 @@ hgroup { width: 100%; }
 h1 { font-size: 80px; line-height: 80px; }
 h6 { font-size: 12px; }
 form { width: 100%; }
-label {
-	background-color: #f8f8f8;
-	border: 1px solid #ccc; border-radius: 5px;
+label { background-color: #f8f8f8; border: 1px solid #ccc; }
 }
-label.checkBox:nth-child(even) { margin-left: 0; }
-label.checkBox:nth-child(odd) { margin-right: 0; }
+
+@media screen and (max-width: 680px) {
+h1 { font-size: 64px; line-height: 64px; }
+body { font: 16px/24px Verdana, Geneva, sans-serif; }
+input { font: 14px/16px Verdana, Geneva, sans-serif; }
 }
 </style>
 
