@@ -94,6 +94,17 @@ h1 { font-size: 64px; line-height: 64px; }
 body { font: 16px/24px Verdana, Geneva, sans-serif; }
 input { font: 14px/16px Verdana, Geneva, sans-serif; }
 }
+
+@media screen and (max-width: 512px) {
+input[type="text"] { width: 160px; }
+span.expansionPack { display: none; }
+}
+
+@media screen and (max-width: 420px) {
+input { float: none; display: block; }
+input[type="text"] { width: 100%; }
+input[type="number"] { width: 100%; }
+}
 </style>
 
 <script>
@@ -141,10 +152,10 @@ function appendListeners() {
     <label title="User ID">Twitter Handle
       <input type="text" id="screen_name" name="screen_name" />
     </label>
-    <label title="Maximum Value of N = 200">Tweets Per Page of Timeline (N)
+    <label title="Maximum Value of N = 200">Tweets Per Page<span class="expansionPack"> of Timeline (N)</span>
       <input type="number" id="count" name="count" max="200" step="1" size="4" />
     </label>
-    <label title="Maximum Value of P = 3200/N">Page Number of the Timeline (P)
+    <label title="Maximum Value of P = 3200/N">Page Number<span class="expansionPack"> of the Timeline (P)</span>
       <input type="number" id="page" name="page" min="1" step="1" size="4" onFocus="updateValue();" />
     </label>
     <p>To fetch more than last 20 tweets, make sure that you're logged into twitter with the mentioned User ID, from this browser!</p>
