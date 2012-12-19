@@ -6,45 +6,77 @@
 <title>TRex - Let's Back Tweets Up</title>
 
 <style>
+* {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
 body {
-	margin: 0; padding: 24px;
+	width: 100%;
+	margin: 0;
+	padding: 24px;
 	background: #eee;
 	font: 20px/32px Verdana, Geneva, sans-serif;
 }
+body a, body form { width: 640px; }
 a[href="https://github.com/debloper/TRex/"] {
-	margin: auto; text-align: right;
-	text-decoration: none; display: block;
+	margin: auto;
+	text-align: right;
+	display: block;
+	text-decoration: none;
 }
 h1, h6 { margin: 0; }
-h1 { color: #c55; text-shadow: 3px 3px 0 #bbb; }
-h6 { color: #567; text-shadow: 0 0 10px #69c; }
-form { margin: 24px auto; }
+h1 {
+	color: #c55;
+	font-size: 96px;
+	line-height: 96px;
+	text-shadow: 3px 3px 0 #bbb;
+}
+h6 {
+	color: #567;
+	font-size: 12px;
+	text-shadow: 0 0 10px #69c;
+}
+form {
+	margin: 24px auto;
+	padding: 24px 40px;
+	display: table;
+	background: #f8f8f8;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
 label {
-	margin: 24px auto; padding: 8px 32px;
-	display: block; border-radius: 5px;
-	color: #369; text-shadow: 0 0 2px #ccc;
+	color: #369;
+	width: 100%;
+	display: block;
+	margin: 24px auto;
+	padding: 8px 32px;
+	border-radius: 5px;
+	border: 1px solid #eee;
+	text-shadow: 0 0 2px #ccc;
 }
 input {
 	color: #666; float: right;
 	font: 20px/24px Verdana, Geneva, sans-serif;
 }
+label.hasValue {
+	color: #fff;
+	box-shadow: 0 0 5px #999;
+	text-shadow: 0 0 2px #999, 0 0 5px #eee;
+	background: #0c6; border: 1px solid #0c6;
+	background: -webkit-linear-gradient(#aec, #0c6);
+	background: -moz-linear-gradient(#aec, #0c6);
+	background: -o-linear-gradient(#aec, #0c6);
+	background: linear-gradient(#aec, #0c6);
+}
 label:hover, label.hasValue:hover {
-	color: #fff; cursor: pointer;
+	color: #fff;
+	cursor: pointer;
 	box-shadow: 5px 5px 20px #ccc;
 	background: #69c; border: 1px solid #69c;
 	background: -webkit-linear-gradient(#ace, #69c);
 	background: -moz-linear-gradient(#ace, #69c);
 	background: -o-linear-gradient(#ace, #69c);
 	background: linear-gradient(#ace, #69c);
-}
-label.hasValue {
-	color: #fff; text-shadow: 0 0 2px #999, 0 0 5px #eee;
-	box-shadow: 0 0 5px #999;
-	background: #0c6; border: 1px solid #0c6;
-	background: -webkit-linear-gradient(#aec, #0c6);
-	background: -moz-linear-gradient(#aec, #0c6);
-	background: -o-linear-gradient(#aec, #0c6);
-	background: linear-gradient(#aec, #0c6);
 }
 input[type="text"] { width: 240px; }
 input[type="number"] { width: 96px; }
@@ -55,57 +87,32 @@ form p {
 	font-size: 14px; line-height: 18px;
 }
 label.checkBox {
+	width: 48%;
 	margin: 12px auto;
 }
-
-@media screen and (min-width: 513px) {
-label { padding: 8px 16px; }
-label.checkBox { width: 40%; display: inline-block; }
-label.checkBox:nth-child(even) { margin-left: 0; float: left; }
-label.checkBox:nth-child(odd) { margin-right: 0; float: right; }
-}
-
-@media screen and (min-width: 681px) {
-label { padding: 8px 32px; }
-label.checkBox { width: 36%; }
-}
-
-@media screen and (min-width: 921px) {
-a { width: 640px; }
-h1 { font-size: 96px; line-height: 96px; }
-h6 { font-size: 12px; }
-form {
-	width: 640px; padding: 24px; display: table;
-	background: #f8f8f8; border: 1px solid #ccc; border-radius: 5px;
-}
-label { width: 550px; border: 1px solid #eee; }
-label.checkBox:nth-child(even) { margin-left: 12px; }
-label.checkBox:nth-child(odd) { margin-right: 12px; }
-}
+label.checkBox:nth-child(even) { float: left; }
+label.checkBox:nth-child(odd) { float: right; }
 
 @media screen and (max-width: 920px) {
-a { width: 100%; }
 h1 { font-size: 80px; line-height: 80px; }
 h6 { font-size: 12px; }
-form { width: 100%; }
 label { background-color: #f8f8f8; border: 1px solid #ccc; }
 }
 
 @media screen and (max-width: 680px) {
+body a, body form { width: 100%; }
 h1 { font-size: 64px; line-height: 64px; }
-body { font: 16px/24px Verdana, Geneva, sans-serif; }
-input { font: 14px/16px Verdana, Geneva, sans-serif; }
+body { font-size: 16px; line-height: 24px; }
+label { padding: 8px 16px; }
+input { font-size: 14px; line-height: 16px; }
 }
 
 @media screen and (max-width: 512px) {
-input[type="text"] { width: 160px; }
-span.expansionPack { display: none; }
-}
-
-@media screen and (max-width: 420px) {
 input { float: none; display: block; }
 input[type="text"] { width: 100%; }
 input[type="number"] { width: 100%; }
+label.checkBox:nth-child(n) { width: 100%; float: none; }
+span.expansionPack { display: none; }
 }
 </style>
 
@@ -113,7 +120,7 @@ input[type="number"] { width: 100%; }
 function updateValue() {
 	var count = document.getElementById("count").value;
 	var node = document.getElementById("page");
-	if ( !isNaN(count) && count != "" ) {
+	if ( !isNaN(count) && count !== "" ) {
 		var buffer = Math.ceil(3200/count);
 		node.setAttribute("max", buffer);
 		node.setAttribute("value", buffer);
@@ -127,25 +134,16 @@ function updateClass(element) {
 	if ( element.type == "checkbox" ) {
 		element.parentNode.classList.toggle("hasValue");
 	}
-	else if ( element.value != "" ) {
+	else if ( element.value !== "" ) {
 		if ( !element.parentNode.classList.contains("hasValue") ) {}
 			element.parentNode.classList.add("hasValue");
 	} else { element.parentNode.classList.remove("hasValue"); }
-}
-function appendListeners() {
-	var inputs = document.getElementsByTagName("input");
-	var count = inputs.length;
-	for ( i=0; i<count; i++ ) {
-		inputs.item(i).setAttribute("onChange", "updateClass(this);");
-		if ( inputs.item(i).type != "checkbox" )
-			inputs.item(i).setAttribute("onKeyUp", "updateClass(this);");
-	}
 }
 </script>
 
 </head>
 
-<body onLoad="appendListeners();">
+<body>
   <a href="https://github.com/debloper/TRex/" title="TRex at GitHub!" target="_blank">
     <h1><span style="color: #69c;">T</span>Rex</h1>
     <h6>Back up your Twitter timeline upto 3200th tweet!</h6>
@@ -170,5 +168,17 @@ function appendListeners() {
     <label class="checkBox">Contributor Details<input type="checkbox" name="contributor_details" value="1" /></label>
     <input type="submit" value="Fetch Tweets" />
   </form>
+
+  <script>
+	(function () { // Append Event Listeners...
+		var inputs = document.getElementsByTagName("input");
+		for ( var i in inputs ) {
+			inputs.item(i).setAttribute("onChange", "updateClass(this);");
+			if ( inputs.item(i).type != "checkbox" )
+				inputs.item(i).setAttribute("onKeyUp", "updateClass(this);");
+		}
+	})();
+  </script>
+
 </body>
 </html>
